@@ -6,7 +6,7 @@ metadata:
 spec:
   description: Proyecto para microservicios en GCP
   sourceRepos:
-    - https://github.com/jesusgitops-netizen/microservices-gcp-ejemplo.git
+    - 'https://github.com/jesusgitops-netizen/microservices-gcp-ejemplo.git'
   destinations:
     - namespace: microservices
       server: https://kubernetes.default.svc
@@ -16,3 +16,9 @@ spec:
   clusterResourceBlacklist:
     - group: policy
       kind: PodSecurityPolicy
+  syncWindows:
+    - kind: allow
+      schedule: 'Mon-Fri 09:00-18:00'
+      duration: 9h
+      applications:
+        - '*'
