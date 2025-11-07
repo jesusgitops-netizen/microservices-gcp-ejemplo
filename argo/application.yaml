@@ -8,11 +8,13 @@ spec:
   source:
     repoURL: 'https://github.com/jesusgitops-netizen/microservices-gcp-ejemplo.git'
     targetRevision: main
-    path: .
+    path: /kubernetes-manifests
   destination:
     server: 'https://kubernetes.default.svc'
-    namespace: default
+    namespace: microservices
   syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
     automated:
       prune: true
       selfHeal: true
