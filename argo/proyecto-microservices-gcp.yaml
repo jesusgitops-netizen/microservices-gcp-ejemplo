@@ -1,0 +1,16 @@
+
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: microservices-gcp
+  namespace: argocd
+spec:
+  description: Proyecto para microservicios en GCP
+  sourceRepos:
+    - '*'
+  destinations:
+    - namespace: '*'
+      server: '*'
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: '*'
