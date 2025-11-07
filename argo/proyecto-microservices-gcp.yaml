@@ -1,4 +1,3 @@
-
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
@@ -7,10 +6,13 @@ metadata:
 spec:
   description: Proyecto para microservicios en GCP
   sourceRepos:
-    - '*'
+    - https://github.com/jesusgitops-netizen/microservices-gcp-ejemplo.git
   destinations:
-    - namespace: '*'
-      server: '*'
+    - namespace: microservices
+      server: https://kubernetes.default.svc
   clusterResourceWhitelist:
     - group: '*'
       kind: '*'
+  clusterResourceBlacklist:
+    - group: policy
+      kind: PodSecurityPolicy
