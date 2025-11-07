@@ -6,11 +6,11 @@ metadata:
 spec:
   project: microservices-gcp
   source:
-    repoURL: 'https://github.com/jesusgitops-netizen/microservices-gcp-ejemplo.git'
+    repoURL: https://github.com/jesusgitops-netizen/microservices-gcp-ejemplo.git
     targetRevision: main
     path: release
   destination:
-    server: 'https://kubernetes.default.svc'
+    server: https://kubernetes.default.svc
     namespace: microservices
   syncPolicy:
     syncOptions:
